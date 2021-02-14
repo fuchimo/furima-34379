@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :first_name, format: {with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: "名前は全角で入力して下さい"}
-    validates :last_name, format: {with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: "苗字は全角で入力して下さい"}
-    validates :first_name_reading, format: {with: /\A[ァ-ヶ一-]+\z/, message: "名前のフリガナは全角カナで入力して下さい"}
-    validates :last_name_reading, format: {with: /\A[ァ-ヶ一-]+\z/, message: "苗字のフリガナは全角カナで入力して下さい"}
+    validates :first_name, format: {with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: "is invalid. Input full-width characters.", allow_blank: true }
+    validates :last_name, format: {with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: "is invalid. Input full-width characters.", allow_blank: true }
+    validates :first_name_reading, format: {with: /\A[ァ-ヶ一-]+\z/, message: "is invalid. Input full-width katakana characters.", allow_blank: true }
+    validates :last_name_reading, format: {with: /\A[ァ-ヶ一-]+\z/, message: "is invalid. Input full-width katakana characters.", allow_blank: true}
     validates :birth_date
   end
 end
