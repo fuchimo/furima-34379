@@ -23,9 +23,8 @@
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
 | item_name         | string     | null: false                    |
-| item_explain      | string     | null: false                    |
+| item_explain      | text       | null: false                    |
 | item_price        | integer    | null: false                    |
-| item_stock        | boolean    | null: false                    |
 | category_id       | integer    | null: false                    |
 | condition_id      | integer    | null: false                    |
 | charge_id         | integer    | null: false                    |
