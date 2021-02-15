@@ -4,4 +4,8 @@ class Sending_days < ActiveHash::Base
     {id: 2, name: '2~3日で発送'},
     {id: 2, name: '4~7日で発送'}
   ]
+
+  Include ActiveHash::Associations
+  has_many :items
+  
 end

@@ -6,4 +6,8 @@ class Condition < ActiveHash::Base
     {id: 4, name: 'やや傷や汚れあり'},
     {id: 5, name: '全体的に状態が悪い'}
   ]
+
+  Include ActiveHash::Associations
+  has_many :items
+  
 end
