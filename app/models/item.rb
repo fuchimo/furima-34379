@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to :condition
   belongs_to :charge
   belongs_to :prefecture
-  belongs_to :sending_days
+  belongs_to :sendingDay
 
   with_options presence: true do
     validates :item_name
