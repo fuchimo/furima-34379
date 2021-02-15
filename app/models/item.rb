@@ -18,7 +18,7 @@ class Item < ApplicationRecord
     validates :condition_id
     validates :charge_id
     validates :prefecture_id
-    validates :sending_days_id
+    validates :sending_day_id
     validates :user
     validates :image
   end
@@ -28,7 +28,7 @@ class Item < ApplicationRecord
     validates :condition_id
     validates :charge_id
     validates :prefecture_id
-    validates :sending_days_id
+    validates :sending_day_id
   end
 
   validates :item_price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10000000}
