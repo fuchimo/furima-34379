@@ -29,7 +29,7 @@
 | condition_id      | integer    | null: false                    |
 | charge_id         | integer    | null: false                    |
 | prefecture_id     | integer    | null: false                    |
-| sending_days_id   | integer    | null: false                    |
+| sending_day_id    | integer    | null: false                    |
 | user              | references | null: false, foreign_key: true |
 
 ### Association
