@@ -1,13 +1,13 @@
-<mxfile host="65bd71144e" modified="2021-02-14T07:24:03.399Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="RsappQY3Yj55J7hvS5fP" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-15T12:30:41.488Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="hz5dIb0WnrfRVJfgX3Q3" version="14.2.4" type="embed">
     <diagram id="XQ0Ql1WSQjqZErnAeBwO" name="ページ1">
-        <mxGraphModel dx="271" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="968" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="nickname: string&lt;br&gt;email: string&lt;br&gt;encrypted_password: string&lt;br&gt;first_name: string&lt;br&gt;last_name: string&lt;br&gt;first_name_reading: string&lt;br&gt;last_name_reading: string&lt;br&gt;birth_date: date" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;horizontal=1;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;" parent="1" vertex="1">
                     <mxGeometry x="40" y="80" width="180" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="item_name: string&lt;br&gt;item_explain: text&lt;br&gt;item_price: integer&lt;br&gt;&lt;br&gt;category_id: integer&lt;br&gt;condition_id: integer&lt;br&gt;charge_id: integer&lt;br&gt;prefecture_id: integer&lt;br&gt;sending_days_id: integer&lt;br&gt;&lt;br&gt;user: references" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;horizontal=1;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;" parent="1" vertex="1">
+                <mxCell id="8" value="item_name: string&lt;br&gt;item_explain: text&lt;br&gt;item_price: integer&lt;br&gt;&lt;br&gt;category_id: integer&lt;br&gt;condition_id: integer&lt;br&gt;charge_id: integer&lt;br&gt;prefecture_id: integer&lt;br&gt;sending_day_id: integer&lt;br&gt;&lt;br&gt;user: references" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;horizontal=1;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;" parent="1" vertex="1">
                     <mxGeometry x="400" y="80" width="180" height="180" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="user: references&lt;br&gt;item: references" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;horizontal=1;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;" parent="1" vertex="1">
