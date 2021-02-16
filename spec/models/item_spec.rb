@@ -11,13 +11,13 @@ RSpec.describe Item, type: :model do
     end
 
     it '価格が¥300以上だと出品ができる' do
-      @item.item_price = '300'
+      @item.item_price = 300
       @item.valid?
       expect(@item).to be_valid
     end
 
     it '価格が¥10000000未満だと出品ができる' do
-      @item.item_price = '9999999'
+      @item.item_price = 9999999
       @item.valid?
       expect(@item).to be_valid
     end
@@ -85,15 +85,27 @@ RSpec.describe Item, type: :model do
     end
 
     it '価格が¥300未満だと出品ができない' do
-      @item.item_price = '299'
+      @item.item_price = 299
       @item.valid?
       expect(@item.errors.full_messages).to include 'Item price is Out of setting range'
     end
 
     it '価格が¥10000000以上だと出品ができない' do
-      @item.item_price = '10000000'
+      @item.item_price = 10000000
       @item.valid?
       expect(@item.errors.full_messages).to include 'Item price is Out of setting range'
+    end
+
+    it '半角英数混合だと出品ができない' do
+      @item.item_price = '10aa'
+      @item.valid?
+      expect(@item.errors.full_messages).to include 'Item price is invalid. Input Half-width number'
+    end
+
+    it '半角英語だと出品ができない' do
+      @item.item_price = 'aaaa'
+      @item.valid?
+      expect(@item.errors.full_messages).to include 'Item price is invalid. Input Half-width number'
     end
   end
 end
