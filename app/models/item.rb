@@ -13,11 +13,12 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :item_name
     validates :item_explain
+    validates :item_price
     validates :user
     validates :image
   end
 
-  with_options numericality: { only_integer: true } do
+  with_options numericality: { only_integer: true, message: 'is Unselected' } do
     validates :category_id
     validates :condition_id
     validates :charge_id
@@ -25,6 +26,7 @@ class Item < ApplicationRecord
     validates :sending_day_id
   end
 
-  validates :item_price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10000000}
+  validates :item_price, numericality: { only_integer: true, message: 'is invalid. Input Half-width number', allow_blank: true }
+  validates :item_price, numericality: { greater_than_or_equal_to: 300, less_than: 10000000, message: 'is Out of setting range', allow_blank: true }
   
 end
