@@ -1,5 +1,4 @@
 class Item < ApplicationRecord
-
   belongs_to :user
   has_one_attached :image
 
@@ -27,6 +26,7 @@ class Item < ApplicationRecord
   end
 
   validates :item_price, numericality: { only_integer: true, message: 'is invalid. Input Half-width number', allow_blank: true }
-  validates :item_price, numericality: { greater_than_or_equal_to: 300, less_than: 10000000, message: 'is Out of setting range', allow_blank: true }
-  
+  validates :item_price,
+            numericality: { greater_than_or_equal_to: 300, less_than: 10_000_000, message: 'is Out of setting range',
+                            allow_blank: true }
 end
