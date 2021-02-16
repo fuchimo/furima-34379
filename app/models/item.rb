@@ -13,7 +13,6 @@ class Item < ApplicationRecord
     validates :item_name
     validates :item_explain
     validates :item_price
-    validates :user
     validates :image
   end
 
