@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_signup, except: [:index, :show]
   before_action :set_params, only: [:show, :edit, :update]
   before_action :different_user_redirect, only: [:edit, :update]
 
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
                                  :prefecture_id, :sending_day_id, :image).merge(user_id: current_user.id)
   end
 
-  def move_to_index
+  def move_to_signup
     redirect_to new_user_session_path unless user_signed_in?
   end
 
