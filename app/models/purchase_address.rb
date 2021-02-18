@@ -1,6 +1,6 @@
 class PurchaseAddress
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :house_number, :building_number, :phone_number, :purchase_id
+  attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :house_number, :building_number, :phone_number, :purchase_id, :token
 
   with_options presence: true do
     validates :user_id
@@ -10,6 +10,7 @@ class PurchaseAddress
     validates :house_number
     validates :phone_number
     validates :purchase_id
+    validates :token
   end
 
   validates :prefecture_id, numericality: { only_integer: true, message: 'is Unselected' }
