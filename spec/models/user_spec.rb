@@ -26,6 +26,7 @@ RSpec.describe User, type: :model do
     it 'emailが既存のデータと重複していると登録ができない' do
       @user.save
       another_user = FactoryBot.build(:user)
+      another_user.email = @user.email
       another_user.valid?
       expect(another_user.errors.full_messages).to include 'Email has already been taken'
     end
