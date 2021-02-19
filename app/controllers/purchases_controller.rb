@@ -22,12 +22,13 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase_address).permit(:postal_code, :prefecture_id, :city, :house_number, :building_number, :phone_number, :purchase).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
+    params.require(:purchase_address).permit(:postal_code, :prefecture_id, :city, :house_number, :building_number,
+                                             :phone_number, :purchase).merge(user_id: current_user.id, item_id: params[:item_id],
+                                                                             token: params[:token])
   end
 
   def pay_item
-    #@item = Item.find(params[:item_id])
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.item_price,
       card: purchase_params[:token],
@@ -50,5 +51,4 @@ class PurchasesController < ApplicationController
   def sold_out_redirect
     redirect_to root_path if Purchase.find_by(item_id: @item.id)
   end
-
 end
