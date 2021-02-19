@@ -9,7 +9,6 @@ class PurchaseAddress
     validates :city
     validates :house_number
     validates :phone_number
-    validates :purchase_id
     validates :token
   end
 
