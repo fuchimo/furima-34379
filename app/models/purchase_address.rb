@@ -13,8 +13,8 @@ class PurchaseAddress
   end
 
   validates :prefecture_id, numericality: { only_integer: true, message: 'is Unselected' }
-  validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'is invalid.', allow_blank: true }
-  validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is invalid.', allow_blank: true }
+  validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'is invalid', allow_blank: true }
+  validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is invalid', allow_blank: true }
 
   def save
     purchase = Purchase.create(user_id: user_id, item_id: item_id)
