@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_signup, except: [:index, :show]
   before_action :set_params, only: [:show, :edit, :update, :destroy]
   before_action :different_user_redirect, only: [:edit, :update, :destroy]
+  before_action :sold_out_redirect, only: [:edit, :update, :destroy]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -57,4 +58,9 @@ class ItemsController < ApplicationController
   def different_user_redirect
     redirect_to root_path if current_user.id != @item.user_id
   end
+
+  def sold_out_redirect
+    redirect_to root_path if Purchase.find_by(item_id: @item.id)
+  end
+  
 end
